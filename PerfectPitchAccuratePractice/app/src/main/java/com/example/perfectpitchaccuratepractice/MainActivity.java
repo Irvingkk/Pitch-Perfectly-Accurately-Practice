@@ -23,6 +23,8 @@ import android.animation.AnimatorSet;
 import android.view.animation.LinearInterpolator;
 import android.view.animation.TranslateAnimation;
 
+import androidx.navigation.ui.NavigationUI;
+
 import be.tarsos.dsp.AudioDispatcher;
 import be.tarsos.dsp.AudioEvent;
 import be.tarsos.dsp.AudioProcessor;
@@ -75,6 +77,7 @@ public class MainActivity extends AppCompatActivity {
 
         arrow = findViewById(R.id.arrow);
         handleAnimation();
+
     }
 
     public void handleAnimation() {

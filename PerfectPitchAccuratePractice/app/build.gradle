@@ -31,4 +31,7 @@ dependencies {
     implementation files('libs\\junit-4.11.jar')
     implementation files('libs\\pdj.jar')
     implementation files('libs\\TarsosDSP-2.4.jar')
+    implementation 'androidx.navigation:navigation-common:2.1.0-alpha05'
+    implementation 'androidx.navigation:navigation-ui:2.1.0-alpha05'
+    implementation 'androidx.navigation:navigation-fragment:2.1.0-alpha05'
 }
