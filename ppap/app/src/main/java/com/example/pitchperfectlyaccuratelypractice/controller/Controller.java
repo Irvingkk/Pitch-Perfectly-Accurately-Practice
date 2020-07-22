@@ -87,8 +87,11 @@ public class Controller implements Observer ,
     curQuestion = model.getCurrentQuestion();
     curConfig = model.getCurrentConfig();
     refreshCurFragment();
+
+    // add self as an observer of model
     model.addChangeListener(this);
     microphone = mainActivity.getMicrophone();
+    // add self as an observer of microphone
     microphone.addObserver(this);
     curFragment = model.getCurrentFragment();
     arrowAnimation = new TranslateAnimation(
@@ -408,7 +411,9 @@ public class Controller implements Observer ,
 //          if (event.getOldValue().getClass() == SongPlayingFragment.class && event.getNewValue().getClass() == SongPracticingFragment.class) {
 //            return;
 //          }
-          correct_mask = new boolean[curQuestion.getExpectedNotes().length]; // FIXME move it to somewhere
+
+          // can't understand correct_mask
+          correct_mask = new boolean[curQuestion.getExpectedNotes().length]; // FIXME move it to somewhere(move to model maybe(irvine))
           curFragment = (ModeFragment) event.getNewValue();
           if (curMode == Mode.NoteGraphPractice) { // FIXME remove it to the constructor of the fragment
             ((NoteGraphModeFragment) curFragment).setCurrentExpectedFrequency(curQuestion.getExpectedNotes()[0].getFrequency());

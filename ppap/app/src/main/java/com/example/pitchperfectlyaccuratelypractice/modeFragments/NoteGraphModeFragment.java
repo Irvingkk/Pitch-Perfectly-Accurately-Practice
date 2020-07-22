@@ -44,7 +44,7 @@ public class NoteGraphModeFragment extends ModeFragment {
      */
     public NoteGraphModeFragment() {
         mode= Mode.NoteGraphPractice;
-        resource = R.layout.modefragment_note_graph;
+        layout = R.layout.modefragment_note_graph;
         background_color = Color.parseColor("#c0ecef");
         instruction_string = "Please sing the note in the center \n\n" +
                 "Single the tap start_playing button will start_playing the answer note.\n\n" +

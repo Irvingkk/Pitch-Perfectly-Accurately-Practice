@@ -13,7 +13,6 @@ import com.example.pitchperfectlyaccuratelypractice.enums.Mode;
 import com.example.pitchperfectlyaccuratelypractice.musicComponent.Song;
 import com.example.pitchperfectlyaccuratelypractice.question.SongQuestion;
 import com.example.pitchperfectlyaccuratelypractice.tools.MidiSongPlayer;
-import com.example.pitchperfectlyaccuratelypractice.tools.NotesPlayer;
 
 /**
  * a children of general fragment
@@ -43,7 +42,7 @@ public class SongPlayingFragment extends SongModeFragment {
      */
     public SongPlayingFragment() {
         mode = Mode.SongPlaying;
-        resource = R.layout.modefragment_song_playing;
+        layout = R.layout.modefragment_song_playing;
         background_color = Color.parseColor("#e8e0f5");
         instruction_string = "TODO incomplete";
     }

@@ -55,7 +55,7 @@ public class PerModeSettingActivity extends AppCompatActivity {
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                returnToMainActivity();
+                returnToFragments();
             }
         });
     }
@@ -63,6 +63,7 @@ public class PerModeSettingActivity extends AppCompatActivity {
     private void CreateTabFragments(){
         // Create an instance of the tab layout from the view.
         TabLayout tabLayout = findViewById(R.id.tab_layout);
+        Log.d(TAG, "perModeSetting mode: " + perModeSetting.mode.name());
 
         // Set the text for each tab.
         switch (perModeSetting.mode){
@@ -76,9 +77,6 @@ public class PerModeSettingActivity extends AppCompatActivity {
                 tabLayout.addTab(tabLayout.newTab().setText("Misc"));
                 break;
             case TriadPractice:
-                tabLayout.addTab(tabLayout.newTab().setText("Note"));
-                tabLayout.addTab(tabLayout.newTab().setText("Misc"));
-                break;
             case NoteGraphPractice:
                 tabLayout.addTab(tabLayout.newTab().setText("Note"));
                 tabLayout.addTab(tabLayout.newTab().setText("Misc"));
@@ -92,7 +90,7 @@ public class PerModeSettingActivity extends AppCompatActivity {
         // Set the tabs to fill the entire layout.
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
 
-        // Use PagerAdapter to manage page views in fragments.
+        // Use tools.PagerAdapter to manage page views in fragments.
         // Each page is represented by its own fragment.
         final ViewPager viewPager = findViewById(R.id.pager);
         final PagerAdapter adapter = new
@@ -126,7 +124,7 @@ public class PerModeSettingActivity extends AppCompatActivity {
     /**
      * pass note [] as int [] in intent back to MainActivity
      */
-    void returnToMainActivity(){
+    void returnToFragments(){
         /* check result and warn user */
         switch (perModeSetting.mode) {
             case IntervalPractice:

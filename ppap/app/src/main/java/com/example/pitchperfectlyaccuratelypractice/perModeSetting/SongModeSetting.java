@@ -9,6 +9,6 @@ public class SongModeSetting extends PerModeSetting {
      */
 
     public SongModeSetting () {
-        mode = Mode.SongPractice;
+        mode = Mode.SongPlaying;
     }
 }

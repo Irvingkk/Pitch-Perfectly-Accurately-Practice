@@ -28,7 +28,6 @@ import com.example.pitchperfectlyaccuratelypractice.activities.PerModeSettingAct
 import com.example.pitchperfectlyaccuratelypractice.controller.Controller;
 import com.example.pitchperfectlyaccuratelypractice.enums.Mode;
 import com.example.pitchperfectlyaccuratelypractice.model.Model;
-import com.example.pitchperfectlyaccuratelypractice.perModeSetting.PerModeSetting;
 import com.example.pitchperfectlyaccuratelypractice.question.IntervalQuestion;
 import com.example.pitchperfectlyaccuratelypractice.tools.NotesPlayer;
 
@@ -89,7 +88,7 @@ public abstract class ModeFragment extends Fragment {
     /** stores the notesPlayer got from MainActivity */
     NotesPlayer notesPlayer;
     /** R.layout.whateverlayout, set in the constructor of children */
-    int resource;
+    int layout;
 
     /** fragment back ground colour */
     int background_color;
@@ -145,11 +144,15 @@ public abstract class ModeFragment extends Fragment {
 
         model = mainActivity.getModel();
         onCreated = true;
-        final View view = inflater.inflate(resource, container, false);
+
+        // inflate the layout, and get the included layout inside it
+        final View view = inflater.inflate(layout, container, false);
         constraintLayout = view.findViewById(R.id.layout_to_include);
         if (constraintLayout == null ){
             throw new AssertionError("constraint layout is new in onCreateView in General Fragment");
         }
+
+        // find out all the components
         frequencyText = constraintLayout.findViewById(R.id.currentFrequencyTextView);
 
         currentPitchText  = constraintLayout.findViewById(R.id.currentPitchTextView);
@@ -165,6 +168,7 @@ public abstract class ModeFragment extends Fragment {
             throw new AssertionError("Fragment onCreatView, some view is null");
         }
 
+        // set up setting button listener
         listenerSetUp();
 
         playSoundButton.setOnClickListener(new View.OnClickListener() {

@@ -43,7 +43,7 @@ public class TriadFragment extends ModeFragment {
      */
     public TriadFragment() {
         mode = Mode.TriadPractice;
-        resource = R.layout.modefragment_triad;
+        layout = R.layout.modefragment_triad;
         background_color = Color.parseColor("#c8dfec");
         instruction_string = "Please the notes in any order\n\n" +
                 "Single tap the start_playing button will start_playing the chord\n\n" +

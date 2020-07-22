@@ -13,9 +13,6 @@ public abstract class PerModeSetting implements Serializable {
     public Mode mode;
     public PerModeSetting() { /* FIXME tmp */}
 
-    public PerModeSetting(Mode mode){
-        this.mode = mode;
-    }
 
     public NotesBitmap getNotesBitmap() {
         if (mode == Mode.SongPlaying || mode == Mode.SongPractice) {

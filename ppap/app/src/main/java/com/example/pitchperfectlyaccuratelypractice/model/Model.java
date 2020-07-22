@@ -1,6 +1,7 @@
 package com.example.pitchperfectlyaccuratelypractice.model;
 
 import android.content.Context;
+import android.util.Log;
 
 import com.example.pitchperfectlyaccuratelypractice.R;
 import com.example.pitchperfectlyaccuratelypractice.enums.Mode;
@@ -121,6 +122,7 @@ public class Model {
             case TriadPractice:
                 return perModeSettings[3];
             case SongPlaying:
+                Log.d(TAG, "PerModeSetting");
                 return perModeSettings[4];
             default:
                 throw new AssertionError("access PerModeSetting out of boundary");

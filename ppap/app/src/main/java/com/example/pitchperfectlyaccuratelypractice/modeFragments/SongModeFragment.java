@@ -37,9 +37,7 @@ public class SongModeFragment extends ModeFragment {
     protected Model model;
 
     /** constructor */
-    SongModeFragment(){
-        mode = Mode.SongPractice;
-    }
+    SongModeFragment(){}
 
     @Override
     void setupAdditionalView() {

@@ -30,7 +30,7 @@ public class NoteModeFragment extends ModeFragment {
      */
     public NoteModeFragment() {
         mode = Mode.NotePractice;
-        resource = R.layout.modefragment_note;
+        layout = R.layout.modefragment_note;
         background_color = Color.parseColor("#E6FBBA");
         instruction_string = "Please sing the note in the center \n\n" +
                 "Single the tap start_playing button will start_playing the answer note.\n\n" +

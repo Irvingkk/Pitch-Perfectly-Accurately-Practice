@@ -215,6 +215,7 @@ public class MainActivity extends AppCompatActivity implements
             this.startActivityForResult(summary_intent, REQUEST_CODE_FROM_FILTER);
         }
 
+        // let the model handle the fragment change
         model.setCurrentMode(Mode.idToMode(id));
 
         // Highlight the selected item has been done by NavigationView

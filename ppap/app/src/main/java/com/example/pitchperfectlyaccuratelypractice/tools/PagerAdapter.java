@@ -1,5 +1,7 @@
 package com.example.pitchperfectlyaccuratelypractice.tools;
 
+import android.util.Log;
+
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -15,12 +17,15 @@ import com.example.pitchperfectlyaccuratelypractice.modeSettingsTabFragments.Son
 import com.example.pitchperfectlyaccuratelypractice.modeSettingsTabFragments.TriadModeMiscSettingTab;
 
 public class PagerAdapter extends FragmentStatePagerAdapter {
+    final String TAG= "PageAdapter";
     int mNumOfTabs;
     Mode mode;
     PerModeSettingActivity filter;
     public PagerAdapter(@NonNull FragmentManager fm, int mNumOfTabs, PerModeSettingActivity filter) {
         super(fm, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
+        Log.d(TAG, TAG);
         this.mNumOfTabs = mNumOfTabs;
+        Log.d(TAG, TAG);
         this.filter = filter;
         mode = filter.perModeSetting.mode;
     }
@@ -56,7 +61,9 @@ public class PagerAdapter extends FragmentStatePagerAdapter {
                 }
             case SongPlaying:
                 switch (position){
-                    case 0: return new SongModeMiscSettingTab(filter);
+                    case 0:
+                        Log.d(TAG, "SongModeMiscSettingTab");
+                        return new SongModeMiscSettingTab(filter);
                     default: return null;
                 }
             default:
